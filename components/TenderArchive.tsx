@@ -10,7 +10,7 @@ export default function TenderArchive() {
   const [tenders, setTenders] = useState<TenderModel[]>([] as TenderModel[]);
 
   useEffect(() => {
-    axios.get<TenderModel[]>("http://localhost:8080/api/tenders").then((response) => {
+    axios.get<TenderModel[]>("https://hackathon-backend-nine.vercel.app/api/tenders").then((response) => {
       const data = response.data.filter(tender => {
         return tender.status === 'finish'
       });

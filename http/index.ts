@@ -1,7 +1,7 @@
 import { AuthResponse } from '@/model/response/AuthResponse';
 import axios from 'axios';
 
-export const API_URL = `http://localhost:8080/api`
+export const API_URL = `https://hackathon-backend-nine.vercel.app/api`
 
 const $api = axios.create({
     withCredentials: true,

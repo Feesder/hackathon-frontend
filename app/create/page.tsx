@@ -39,7 +39,7 @@ export default function create() {
     formData.append('userId', store.user.id)
     formData.append('picture', picture);
 
-    axios.post('http://localhost:8080/api/tenders', formData)
+    axios.post('https://hackathon-backend-nine.vercel.app/api/tenders', formData)
       .then((response) => {
         setFail(false)
         setSuccess(true)

@@ -28,11 +28,11 @@ export default function ({ params }: any) {
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/tenders/" + id).then((response) => {
+    axios.get("https://hackathon-backend-nine.vercel.app/api/tenders/" + id).then((response) => {
       setTender(response.data);
 
       axios
-        .get("http://localhost:8080/api/users/" + response.data.userId)
+        .get("https://hackathon-backend-nine.vercel.app/api/users/" + response.data.userId)
         .then((response) => {
           setAuthor(response.data);
         });
@@ -87,7 +87,7 @@ export default function ({ params }: any) {
               </TableRow>
             </TableBody>
           </Table>
-          <Image style={{margin: '0 auto'}} src={'http://localhost:8080/static/' + tender?.picture} size='medium' bordered />
+          <Image style={{margin: '0 auto'}} src={'https://hackathon-backend-nine.vercel.app/static/' + tender?.picture} size='medium' bordered />
           {tender?.accepted ? (
             ""
           ) : (
@@ -98,7 +98,7 @@ export default function ({ params }: any) {
                 tender.status = "proccess";
                 axios
                   .put(
-                    "http://localhost:8080/api/tenders/" + tender?._id,
+                    "https://hackathon-backend-nine.vercel.app/api/tenders/" + tender?._id,
                     tender
                   )
                   .then((response) => {

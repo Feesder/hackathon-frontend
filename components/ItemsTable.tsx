@@ -28,7 +28,7 @@ function ItemsTable({ tender }: any) {
   useEffect(() => {
     if (tender) {
       axios
-        .get("http://localhost:8080/api/items/" + tender._id)
+        .get("https://hackathon-backend-nine.vercel.app/api/items/" + tender._id)
         .then((response) => {
           setItems(response.data);
         });

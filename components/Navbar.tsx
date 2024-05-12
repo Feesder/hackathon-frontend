@@ -18,7 +18,7 @@ function Navbar() {
   const pathname = usePathname();
 
   const HandleCreateTender = () => {
-    window.location.href = "http://localhost:3000/create";
+    window.location.href = "https://hackathon-backend-nine.vercel.app/create";
   };
 
   const { store } = useContext(Context);
